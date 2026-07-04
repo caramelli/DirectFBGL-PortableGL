@@ -21,6 +21,7 @@
 
 #include <directfbgl.h>
 #include <display/idirectfbsurface.h>
+#define  PGL_ARGB32
 #define  PORTABLEGL_IMPLEMENTATION
 #include "portablegl.h"
 
@@ -201,7 +202,11 @@ Construct( IDirectFBGL      *thiz,
      DFBSurfacePixelFormat  pixelformat;
      DFBSurfaceDescription  desc;
      IDirectFBSurface_data *surface_data;
+#ifdef pix_t
+     pix_t                 *buf = NULL;
+#else
      u32                   *buf = NULL;
+#endif
 
      DIRECT_ALLOCATE_INTERFACE_DATA( thiz, IDirectFBGL_PGL );
 
@@ -220,7 +225,11 @@ Construct( IDirectFBGL      *thiz,
          surface->Unlock( surface );
      }
 
+#ifdef pix_t
+     err = init_glContext( &data->pglContext, &buf, width, height);
+#else
      err = init_glContext( &data->pglContext, &buf, width, height, 32, 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000 );
+#endif
      if (!err) {
           D_ERROR( "DirectFBGL/PGL: Failed to initialize glContext!\n" );
           DIRECT_DEALLOCATE_INTERFACE( thiz );
