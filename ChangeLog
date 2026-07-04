@@ -1,3 +1,24 @@
+commit 8dbee3e930a7d4d18bd3fa997516a3c09917775d
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Sat Jul 4 17:45:54 2026 +0200
+
+    Follow PortableGL API changes
+
+commit 91d9b2e6ac98984f311d29e3eb3297ce523a1fcc
+Merge: 68f9c2d bd367bf
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Mon Oct 9 06:41:26 2023 +0200
+
+    Merge pull request #3 from caramelli/master
+    
+    Add support for DirectFBGL interface with version 2
+
+commit bd367bf309e639aa09472d41107a9d8220dd2761
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Mon Oct 9 06:36:03 2023 +0200
+
+    Update ChangeLog
+
 commit 9ee352dff7c0fafef3612ed752c31db6b3129d0b
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Mon Oct 9 06:35:52 2023 +0200
